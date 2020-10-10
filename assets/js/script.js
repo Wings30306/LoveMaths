@@ -117,7 +117,9 @@ function displayDivisionQuestion(operand1, operand2) {
     document.getElementById("operator").textContent = "/";
     largestOperand = operand1 > operand2 ? operand1 : operand2;
     smallestOperand = operand1 > operand2 ? operand2 : operand1;
-    if (largestOperand % smallestOperand === 0) {
+    if (operand1 === operand2 || operand1 === 1 || operand2 === 1) {
+        runGame("division");
+    } else if (largestOperand % smallestOperand === 0) {
         document.getElementById("operand1").textContent = largestOperand;
         document.getElementById("operand2").textContent = smallestOperand;
     } else {
